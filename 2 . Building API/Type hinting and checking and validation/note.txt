@@ -1,0 +1,162 @@
+Type Hinting :  add type info to the code they are not enforced by the python they are just documention and metadata 
+
+                that other tools and use (native types with : int/str/dict or typing module of python for complex types )
+
+
+
+                example :
+
+                    name: str = "anish"
+
+                    age: int = 22
+
+
+
+                    def add(a: int, b: int) -> int:
+
+                        return a + b
+
+
+
+                    # complex types with typing module
+
+                    from typing import List, Dict, Optional, Union
+
+                    names: List[str] = ["a", "b"]
+
+                    user: Dict[str, int] = {"age": 22}
+
+                    maybe_name: Optional[str] = None
+
+                    value: Union[int, str] = 10
+
+
+
+
+
+Type checking : analyses our code before it runs and checks if we are using correct type in correct placeses 
+
+                by pre notifying with sqigly line (tool : mypy)
+
+
+
+                example :
+
+                    name: str = 10
+
+                    # mypy / IDE shows squiggly line
+
+                    # but python still runs this code (no runtime error only for type)
+
+
+
+                    def create_user(first_name: str, last_name: str, age: int) -> dict:
+
+                        return {
+
+                            "first_name": first_name,
+
+                            "last_name": last_name,
+
+                            "age": age
+
+                        }
+
+
+
+                    create_user("Anand", "Kumar", "twenty")
+
+                    # type checker warns : age should be int
+
+                    # but at runtime it may still run
+
+
+
+                command :
+
+                    mypy file.py
+
+
+
+
+
+Type Validation : checks the data at runtime and raises error if value is wrong type / wrong shape
+
+                  (python type hints alone do NOT do this)
+
+
+
+                used for :
+
+                    - API request body
+
+                    - API response
+
+                    - form / json input
+
+                    - config data
+
+
+
+                tools :
+
+                    - pydantic (FastAPI uses this)
+
+                    - isinstance() manual checks
+
+
+
+                example (manual) :
+
+                    def set_age(age):
+
+                        if not isinstance(age, int):
+
+                            raise TypeError("age must be int")
+
+                        return age
+
+
+
+                    set_age("twenty")   # runtime error
+
+
+
+                example (pydantic / FastAPI) :
+
+                    from pydantic import BaseModel
+
+
+
+                    class User(BaseModel):
+
+                        name: str
+
+                        age: int
+
+
+
+                    User(name="anish", age=22)        # ok
+
+                    User(name="anish", age="twenty")  # runtime validation error
+
+
+
+                difference from type checking :
+
+                    Type checking  -> before run (mypy / squiggly lines)
+
+                    Type validation -> during run (pydantic / raise error)
+
+
+
+
+
+Quick summary :
+
+    Type Hinting    = write types in code (documentation only)
+
+    Type Checking   = tools check types before running (mypy) [sqigly-line for denoting type incorrectness]
+
+    Type Validation = enforce types while program is running (pydantic)
+
