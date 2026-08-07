@@ -1,0 +1,47 @@
+{
+    "P001": {
+        "name": "ashish",
+        "age": 22,
+        "weight": 60.5,
+        "height": 1.85,
+        "city": "Kolkata",
+        "bmi": 17.67713659605551,
+        "verdict": "Underweight"
+    },
+    "P002": {
+        "name": "Priya Sharma",
+        "age": 28,
+        "weight": 54.0,
+        "height": 1.65,
+        "bmi": 20.8,
+        "verdict": "Healthy",
+        "city": "Delhi"
+    },
+    "P003": {
+        "name": "Rahul Verma",
+        "age": 35,
+        "weight": 96.3,
+        "height": 1.8,
+        "bmi": 31.2,
+        "verdict": "Obese",
+        "city": "Mumbai"
+    },
+    "P004": {
+        "name": "Sneha Gupta",
+        "age": 41,
+        "weight": 67.8,
+        "height": 1.7,
+        "bmi": 26.1,
+        "verdict": "Overweight",
+        "city": "Bengaluru"
+    },
+    "P005": {
+        "name": "Arjun Mehta",
+        "age": 30,
+        "weight": 58.4,
+        "height": 1.6,
+        "bmi": 18.7,
+        "verdict": "Normal",
+        "city": "Hyderabad"
+    }
+}
