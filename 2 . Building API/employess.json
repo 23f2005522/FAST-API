@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Anish Bharti",
+    "department": "CS",
+    "age": 22
+  },
+  {
+    "id": 2,
+    "name": "Riya Sharma",
+    "department": "HR",
+    "age": 25
+  },
+  {
+    "id": 3,
+    "name": "John Doe",
+    "department": "IT",
+    "age": 30
+  },
+  {
+    "id": 4,
+    "name": "Priya Patel",
+    "department": "Finance",
+    "age": 28
+  },
+  {
+    "id": 5,
+    "name": "Rahul Verma",
+    "department": "IT",
+    "age": 26
+  },
+  {
+    "id": 6,
+    "name": "Sneha Gupta",
+    "department": "Marketing",
+    "age": 29
+  },
+  {
+    "id": 7,
+    "name": "Amit Kumar",
+    "department": "CS",
+    "age": 24
+  },
+  {
+    "id": 8,
+    "name": "Neha Singh",
+    "department": "Finance",
+    "age": 31
+  },
+  {
+    "id": 9,
+    "name": "Arjun Mehta",
+    "department": "IT",
+    "age": 27
+  },
+  {
+    "id": 10,
+    "name": "Kavya Nair",
+    "department": "HR",
+    "age": 23
+  },
+  {
+    "id": 11,
+    "name": "Vikram Rao",
+    "department": "Operations",
+    "age": 35
+  },
+  {
+    "id": 12,
+    "name": "Pooja Das",
+    "department": "Marketing",
+    "age": 27
+  },
+  {
+    "id": 13,
+    "name": "Rohit Sen",
+    "department": "Sales",
+    "age": 32
+  },
+  {
+    "id": 14,
+    "name": "Meera Iyer",
+    "department": "Finance",
+    "age": 26
+  },
+  {
+    "id": 15,
+    "name": "Karan Malhotra",
+    "department": "IT",
+    "age": 34
+  },
+  {
+    "id": 16,
+    "name": "Simran Kaur",
+    "department": "HR",
+    "age": 28
+  },
+  {
+    "id": 17,
+    "name": "Aditya Roy",
+    "department": "CS",
+    "age": 21
+  },
+  {
+    "id": 18,
+    "name": "Nisha Kapoor",
+    "department": "Sales",
+    "age": 29
+  },
+  {
+    "id": 19,
+    "name": "Deepak Mishra",
+    "department": "Operations",
+    "age": 33
+  },
+  {
+    "id": 20,
+    "name": "Ishita Bose",
+    "department": "Marketing",
+    "age": 24
+  }
+]
