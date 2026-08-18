@@ -21,10 +21,11 @@ def insert_patient_data(patient : Patient):
 
 patient_info = {
     "name": "ankit",
-    # "age": 20,
+    "age": 20,
     "weight": 70.5,
     # "married": True,
     "email": "ankit@example.com",
+    "linkedin_url": "https://www.linkedin.com/in/ankit",
     "allergies": ["penicillin", "latex"],
     "contact_deactials": {
         "phone": "+91 9876543210",
@@ -73,10 +74,11 @@ class Student(BaseModel):
 # Field()  → Pydantic function. Does the real work: constraints, default, description, alias, strict, etc.
 #   age: int = Field(gt=18, lt=100, description="...")
 #
-# Annotated → from typing. Only a wrapper that attaches metadata to a type.
+# Annotated → from typing. Only a wrapper that attaches metadata to a type.  syntax -- Annotated[TYPE, METADATA]
 #   Pydantic reads that metadata (often Field(...) inside Annotated).
 #   from typing import Annotated
-#   age: Annotated[int, Field(gt=18, lt=100)]
+#   age: Annotated[int, "must be positive"]  ## The important point is that Annotated itself doesn't perform validation. It essentially says: The type is int, and I'm attaching some additional metadata to it.
+
 #
 # Style A (Field as default)          →  name: str = Field(min_length=3)
 # Style B (Annotated + Field)         →  name: Annotated[str, Field(min_length=3)]
@@ -84,6 +86,34 @@ class Student(BaseModel):
 # Defaults:  age: int = Field(default=18)  OR  age: Annotated[int, Field(gt=18)] = 18
 #
 #
+
+
+
+## Example of using Annotated with Field() for validation
+
+# from typing import Annotated
+# from pydantic import BaseModel, Field
+
+# class User(BaseModel):
+#     username : Annotated[str , Field(min_length=3 , max_length=50 , description="Username must be between 3 and 50 characters")]
+#     age : Annotated[int , Field(gt=18 , lt=100 , description="Age must be between 18 and 100")]
+#     roll : Annotated[int , Field(gt=1 , lt=1000 , description="Roll number must be between 1 and 1000")]
+#     email : Annotated[EmailStr , Field(description="Email must be a valid email address")]
+#     address : Annotated[Dict[str , str] , Field(description="Address must be a dictionary with keys 'street', 'city', 'state', 'zip'" , default={"street": "123 Main St", "city": "Anytown", "state": "CA", "zip": "12345"})]
+
+
+
+# user_info = {
+#     "username": "john_doe",
+#     "age": 25,
+#     "roll": 123,
+#     "email": "john.doe@example.com"
+# }
+
+# user1 : User = User(**user_info)
+# print(user1)
+
+
 ### Suppress type conversion with strict=True inside Field()
 # By default Pydantic coerces types: age="20" (str) → int 20  (allowed)
 # With strict=True, that conversion is blocked — value must already be the correct type.
