@@ -55,3 +55,64 @@ u1 : User = User(
 )
 
 print_user_data(u1)
+
+
+# The @property decorator in Python is a built-in tool that allows you to turn a class method into a "read-only" attribute . 
+# It lets you access, modify, or delete a class attribute like a normal variable, while secretly executing custom code behind the scenes to handle validation, dynamic calculations, or logging.
+
+# The Core Components: 
+#     @property: Defines the Getter method to retrieve the attribute value.@<attribute_name>.setter: Defines the Setter method to validate and assign a new value.@<attribute_name>.deleter: Defines the Deleter method to clear or delete the attribute
+    
+#     @<attribute_name>.setter: Defines the Setter method to validate and assign a new value
+    
+#     @<attribute_name>.setter: Defines the Setter method to validate and assign a new value
+
+
+
+# Code Example: Temperature Controller 
+
+# class Temperature:
+#     def __init__(self, celsius):
+#         self._celsius = celsius  # Internal "private" attribute
+
+#     # 1. Getter: Access value without parenthesis
+#     @property
+#     def celsius(self):
+#         print("Fetching temperature...")
+#         return self._celsius
+
+#     # 2. Setter: Add data validation logic
+#     @celsius.setter
+#     def celsius(self, value):
+#         if value < -273.15:
+#             raise ValueError("Temperature below absolute zero is impossible!")
+#         print("Setting temperature...")
+#         self._celsius = value
+
+#     # 3. Deleter: Clean up resources on deletion
+#     @celsius.deleter
+#     def celsius(self):
+#         print("Deleting temperature records...")
+#         del self._celsius
+
+
+# # Create an instance
+# temp = Temperature(25)
+
+# # Triggers the Getter (@property)
+# print(temp.celsius)  
+# # Output:
+# # Fetching temperature...
+# # 25
+
+# # Triggers the Setter (@celsius.setter)
+# temp.celsius = 30  
+# # Output: Setting temperature...
+
+# # Triggers data validation error
+# temp.celsius = -300  
+# # Output: ValueError: Temperature below absolute zero is impossible!
+
+# # Triggers the Deleter (@celsius.deleter)
+# del temp.celsius  
+# # Output: Deleting temperature records...

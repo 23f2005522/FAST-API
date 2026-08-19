@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, Path, Query
 from models import Employee
-from typing import List  ## typing is a module that provides a way to type hint in python
+from typing import List, Literal  ## typing is a module that provides a way to type hint in python
 import json
 from pathlib import Path as FilePath
 
@@ -128,7 +128,7 @@ def update_employee(  # ... means required parameter other wise
 # 5. delete employee
 
 
-@app.delete("/employee/{id}", response_model=Employee)
+@app.delete("/employee/{id}")
 def delete_employee(
     id: int,
 ):  ## ID is the path parameter changed to integer type ? Yes it is
@@ -154,10 +154,9 @@ def search_employees(
         description="The department of the employee to search in array",
         example="IT",
     ),
-    order_by: str = Query(
+    order_by: Literal["asc", "desc"] = Query(
         "asc",
         description="Sort the results by a age",
-        choices=["asc", "desc"],
     ),
 ):
     results = []

@@ -20,7 +20,7 @@ class Student(BaseModel):
 
     ## use1 :: validation of data before creating the instance of the model
     @field_validator('email')
-    @classmethod
+    @classmethod ##  decorator in Python is used to bind a method to the class itself rather than its object instances
     def validate_age(cls , value):   ## gets class object as cls and value as the value of the field for validation
         valid_domains = ['hdfc.com' , 'icici.com' , 'bankofindia.com']
         
